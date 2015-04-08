@@ -16,7 +16,7 @@
 
 
 int multiple = 8;
-
+int divisor = 6;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -41,8 +41,14 @@ int multiple = 8;
     return newIntValue;
     
 }
-/* Step 4 -  Add a method called divided that takes an integer and returns and integer
- At the top of the class declare a global static integer called divisor and set it equal to 6
+
+- (int)divided:(int)someValue  {
+    int newDividedValue = someValue / divisor;
+    return newDividedValue;
+    
+}
+/* X Step 4 -  Add a method called divided that takes an integer and returns and integer
+ X At the top of the class declare a global static integer called divisor and set it equal to 6
  In the divided method, return the integer divided by the global variable divisor
  You can write it out fully, or you can use the operator shorthand
  In the iterateCount method add a line that calls divided and passes in the value returned by multiplied and prints the result to the console with the message "Divided [multiplied] by [divisor] to be [divided]" where the value returned by divided gets printed inline*/
