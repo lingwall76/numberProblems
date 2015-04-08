@@ -15,11 +15,39 @@
 @implementation AppDelegate
 
 
+int multiple = 8;
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [self iterateCount:4];
+    
+    
     return YES;
 }
 
+
+    
+- (void)iterateCount:(int)someValue  {
+    
+    int multiplyValue = [self multiplied:someValue];
+    NSLog(@"Muliplied %i by %i to be %i", someValue, multiple, multiplyValue);
+    
+    
+}
+    
+- (int)multiplied:(int)someValue   {
+    int newIntValue = someValue * multiple;
+    return newIntValue;
+    
+}
+/* Step 4 - Add a method called divided that takes an integer and returns and integer
+ At the top of the class declare a global static integer called divisor and set it equal to 6
+ In the divided method, return the integer divided by the global variable divisor
+ You can write it out fully, or you can use the operator shorthand
+ In the iterateCount method add a line that calls divided and passes in the value returned by multiplied and prints the result to the console with the message "Divided [multiplied] by [divisor] to be [divided]" where the value returned by divided gets printed inline*/
+    
+    
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
