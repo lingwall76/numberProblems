@@ -41,7 +41,7 @@ int multiple = 8;
     return newIntValue;
     
 }
-/* Step 4 - Add a method called divided that takes an integer and returns and integer
+/* Step 4 -  Add a method called divided that takes an integer and returns and integer
  At the top of the class declare a global static integer called divisor and set it equal to 6
  In the divided method, return the integer divided by the global variable divisor
  You can write it out fully, or you can use the operator shorthand
