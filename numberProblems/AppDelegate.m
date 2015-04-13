@@ -16,7 +16,7 @@
 
 
 int multiple = 8;
-int divisor = 6;
+float divisor = 6.0;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -33,26 +33,30 @@ int divisor = 6;
     int multiplyValue = [self multiplied:someValue];
     NSLog(@"Muliplied %i by %i to be %i", someValue, multiple, multiplyValue);
     
+    float dividedValue = [self divided:multiplyValue];
+    NSLog(@"Divided %i by %f to be %f", multiplyValue, divisor, dividedValue);
     
-}
+    while (someValue >= 0) {
+        NSLog(@"Iterate %i", someValue);
+        someValue--;
+    }
+    
+    }
+
     
 - (int)multiplied:(int)someValue   {
-    int newIntValue = someValue * multiple;
-    return newIntValue;
+    int newMultipliedValue = someValue * multiple;
+    return newMultipliedValue;
     
 }
 
-- (int)divided:(int)someValue  {
-    int newDividedValue = someValue / divisor;
+- (int)divided:(float)someValue  {
+    float newDividedValue = someValue / divisor;
     return newDividedValue;
     
 }
-/* X Step 4 -  Add a method called divided that takes an integer and returns and integer
- X At the top of the class declare a global static integer called divisor and set it equal to 6
- In the divided method, return the integer divided by the global variable divisor
- You can write it out fully, or you can use the operator shorthand
- In the iterateCount method add a line that calls divided and passes in the value returned by multiplied and prints the result to the console with the message "Divided [multiplied] by [divisor] to be [divided]" where the value returned by divided gets printed inline*/
-    
+    /*The goal is to get "Divided [integer] to be [divided]" such that divided is a floating point value rather than a rounded integer. For example, 16 / 6 = 2.6666667. When iterateCount prints divided it should be a floating point value. The others should not.
+    Go back through the multiplied and divided methods and update them so that the iterateCount method can print a floating point answer.*/
     
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
